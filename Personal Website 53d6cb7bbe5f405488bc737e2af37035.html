@@ -1,0 +1,722 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Personal Website</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="53d6cb7b-be5f-4054-88bc-737e2af37035" class="page sans"><header><h1 class="page-title">Personal Website</h1><p class="page-description"></p></header><div class="page-body"><hr id="bf20dff0-46cb-4439-a914-2e7c5103b361"/><p id="a6400222-c656-4f9f-9628-4ac7d2ffa57c" class="">
+</p><div id="16ec3d80-eb00-4b3b-bc4c-5db0613a522f" class="column-list"><div id="297ce8f9-219d-45dc-81ae-0fa649d6d285" style="width:68.75%" class="column"><h1 id="5849b9d6-f8f8-4701-8d14-4b1cd58b361c" class="block-color-teal">Hey 👋 I’m Bohan Yue.</h1><p id="d5a8fca7-c33f-4595-bda8-511e8ae6f511" class="block-color-gray">This where you can include a short bio to let people know a bit about yourself. The best bio&#x27;s cover a lot of ground quickly and get straight to the point. </p><p id="3a0ca48b-c33a-4dc1-a316-052dc5c89706" class="">
+</p><p id="783c1364-d34b-4f30-874d-a120b3485f9b" class=""><mark class="highlight-gray">Get in touch</mark> <a href="mailto:bohan.yue@ed.ac.uk">bohan.yue@ed.ac.uk</a></p></div><div id="673f8f35-fa0e-4d4a-a1a5-a94f6307c484" style="width:31.25%" class="column"><p id="a8dde479-87c4-47a2-aa90-c990b3b23e77" class="">
+</p><p id="e483c29a-94e7-4de7-a294-f9cdd8125dad" class="">👨‍💻 <a href="https://github.com/">Github</a></p><p id="08a85b7b-169d-474e-a9bc-cc7b4953f619" class="">👤 <a href="https://orcid.org/0009-0009-8935-2929">ORCID</a></p><p id="de32b804-7a2d-429d-b7d2-4215b03c9f27" class="">📷 <a href="https://unsplash.com/">Douban</a></p><p id="de2e9c2d-e66b-4de9-aa1d-739b6c7829d1" class="">🎨 <a href="https://instagram.com/">Instagram</a></p></div></div><p id="0ab253af-ebce-41aa-9e45-79140cb20026" class="">
+</p><p id="c65126ce-4bce-422f-8e92-2552e6051b0a" class="">
+</p><hr id="da920135-aed5-4681-aa6e-0844f9c3d759"/><div id="719b8373-f63d-461f-befc-eac5263b435e" class="column-list"><div id="c6cedc8d-858c-4a2c-b1cc-a3f3f21b5966" style="width:30%" class="column"><p id="f82e16d7-f3f1-4504-92a2-bec3f05ccc74" class="block-color-teal"><strong><a href="Personal%20Website%2053d6cb7bbe5f405488bc737e2af37035.html">Projects → </a></strong></p><p id="f88c18a1-5510-40f6-af4d-247b0c11fb3c" class="">
+</p></div><div id="e9504ff5-f6ea-4606-87ef-059c36be1bc4" style="width:28.125%" class="column"><p id="4c0e6732-a07d-47a4-8c91-fc76beba0e29" class="block-color-teal"><strong><a href="Personal%20Website%2053d6cb7bbe5f405488bc737e2af37035.html">About me →</a></strong></p><p id="1184c59d-b72e-4497-bca5-67f8ce80967a" class="">
+</p></div><div id="e1d5d363-75de-4e6f-abd2-bedf74eabe2b" style="width:15.208333333333327%" class="column"><p id="ac2e2e5b-52d1-4a93-8c80-b1ec8eb9a861" class="block-color-teal"><strong><a href="Personal%20Website%2053d6cb7bbe5f405488bc737e2af37035.html">Blog →</a></strong></p></div><div id="a0686c6f-b99b-440f-aebd-414bba15b880" style="width:26.666666666666668%" class="column"><p id="f9a1d6f2-14eb-46d4-8cba-ec2277aea10d" class="block-color-teal"><strong><a href="Personal%20Website%2053d6cb7bbe5f405488bc737e2af37035.html">Testimonials →</a></strong></p></div></div><p id="41447289-3522-447e-9cd2-0572b4177cf3" class="block-color-teal">
+</p><p id="ccfc32a1-77a7-4b32-b9f3-4974be344d96" class="">
+</p><h2 id="7fd390bb-c7fd-442a-a776-8458362fafdf" class=""><mark class="highlight-gray"><strong>Things I can offer</strong></mark></h2><hr id="a1acddd7-8901-4f39-8984-2a6065d1e3bc"/><div id="3f6a2110-e5f0-47c6-ac5c-cedcd447e7f5" class="column-list"><div id="b30c9586-6115-43f2-b3b5-c90168f15b44" style="width:50%" class="column"><h1 id="2fa495ed-7c14-44e8-b237-489e4fae9cd8" class="">🧠 📈 📚</h1><p id="773aff41-2d95-422c-988d-c166e41a8b0b" class="">
+</p><p id="1db3d2fe-7e75-41f9-a3f3-7584fb4785a5" class="">Service offering #1</p><p id="540da7b7-2953-4132-a289-5ac68a141c70" class="block-color-gray">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ac ipsum enim. Etiam ultricies augue iaculis, elementum risus non, blandit tortor. Suspendisse lobortis facilisis sapien, in vestibulum sem dignissim ut.</p><h1 id="5cc2a14f-917d-49f5-869e-ca4397f09779" class="">💫 🎯🧘🏻‍♂️</h1><p id="9719cddc-d6ea-42da-b2b7-9c9616665560" class="">Service offering #3</p><p id="82cf0f83-a0d8-4fab-abbd-9ea8e9835a36" class="block-color-gray">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ac ipsum enim. Etiam ultricies augue iaculis, elementum risus non, blandit tortor. Suspendisse lobortis facilisis sapien, in vestibulum sem dignissim ut.</p></div><div id="c73150a0-f304-4c0d-adb4-89bd26637952" style="width:50%" class="column"><h1 id="8958fbcc-8ded-403f-a893-d5c7c94917e7" class="">👨‍💻 🖥 📱</h1><p id="7a1a65d5-aa59-486e-891f-b0102b0b4d53" class="">Service offering #2</p><p id="d24d1abb-074e-4b85-8d40-342638eea96a" class="block-color-gray">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ac ipsum enim. Etiam ultricies augue iaculis, elementum risus non, blandit tortor. Suspendisse lobortis facilisis sapien, in vestibulum sem dignissim ut.</p><h1 id="6df06ebe-257c-42bd-9e2a-3f7875312fbd" class="">⚡️ 🎨 🌱</h1><p id="0d83cb8f-248a-45f9-825b-a431d504d6dc" class="">Service offering #4</p><p id="acfa9a9a-bb5a-48fa-b65b-a7bff78d35b2" class="block-color-gray">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ac ipsum enim. Etiam ultricies augue iaculis, elementum risus non, blandit tortor. Suspendisse lobortis facilisis sapien, in vestibulum sem dignissim ut.</p></div></div><p id="25b8cda2-ff15-4b25-a022-0129a7b1355f" class="">
+</p><p id="1cd79411-96fd-47a5-a690-099117f3b791" class="">
+</p><p id="b6cf8df1-3931-4251-b87f-75e2e9efb2d3" class="">
+</p><h2 id="d45b16a9-b284-40be-999e-cb451901fa56" class=""><mark class="highlight-gray">Projects</mark> </h2><hr id="6c5de8a8-22ab-4b59-bef1-0c422778dcdc"/><p id="a1bd0552-97a3-473b-91cc-96dae261295e" class="">
+</p><div id="8aab5840-893b-4040-ac69-f31f06ab1264" class="column-list"><div id="c97092c3-7b9c-4a3d-8a3a-a25ef28f5bd8" style="width:43.75%" class="column"><p id="aa19e258-6f86-4ceb-b678-d4aa89ab1c80" class="">
+</p><figure id="141c31ca-8c83-4571-a0d3-076d6e733a41" class="link-to-page"><a href="Personal%20Website%2053d6cb7bbe5f405488bc737e2af37035/Project%20#1%20141c31ca8c834571a0d3076d6e733a41.html"><span class="icon">📒</span>Project #1</a></figure><p id="de633ca3-5fb5-4cd5-aa2a-e501a4832f48" class=""><mark class="highlight-gray">Share a few lines to give people an idea of what to expect. What was the project? What were the deliverables?</mark></p><p id="a217e515-1da0-4757-89bc-739d5b8f4f8b" class="">
+</p></div><div id="da6418ef-a452-4f07-be87-38c9ce27d934" style="width:56.25%" class="column"><figure id="43f0b325-3421-49ef-bc34-32143511d1ee" class="image"><a href="Personal%20Website%2053d6cb7bbe5f405488bc737e2af37035/Screenshot_2020-10-07_at_20.24.09.png"><img style="width:2600px" src="Personal%20Website%2053d6cb7bbe5f405488bc737e2af37035/Screenshot_2020-10-07_at_20.24.09.png"/></a></figure></div></div><p id="39b05756-d41d-4dbe-a7b2-0f5e4dac39a2" class="">
+</p><p id="fa0e0594-dffa-422c-bf3a-5df0bd9deead" class="">
+</p><p id="2a664411-70dc-4cb0-a96e-0df97b122577" class="">
+</p><div id="aa7773b8-4182-4bcf-ba36-a9bdf10a64eb" class="column-list"><div id="5e921a2c-bb31-4939-9547-fe285ecdd3f4" style="width:43.75%" class="column"><p id="bdb8658b-649c-4773-bfdc-0e885e5784d8" class="">
+</p><figure id="1a8b9c12-3f6e-4ddc-ae02-3181d5abbb84" class="link-to-page"><a href="Personal%20Website%2053d6cb7bbe5f405488bc737e2af37035/Project%20#2%201a8b9c123f6e4ddcae023181d5abbb84.html"><span class="icon">🎒</span>Project #2</a></figure><p id="afbb0fe4-1767-40ed-bda9-c4975c7f9207" class=""><mark class="highlight-gray">Share a few lines to give people an idea of what to expect. What was the project? What were the deliverables?</mark></p></div><div id="a6dfd934-bf09-4c20-ac3a-9463860295d2" style="width:56.25%" class="column"><figure id="41b41164-3429-4317-9cf9-66fe6fb2417d" class="image"><a href="Personal%20Website%2053d6cb7bbe5f405488bc737e2af37035/Screenshot_2020-10-07_at_20.29.02.png"><img style="width:2584px" src="Personal%20Website%2053d6cb7bbe5f405488bc737e2af37035/Screenshot_2020-10-07_at_20.29.02.png"/></a></figure></div></div><p id="6e1bf203-5145-4df9-8d5b-ac4396ac69ca" class="">
+</p><p id="9a959114-d865-47a4-a702-e66d66d39734" class="">
+</p><p id="4694f1b1-ab8a-4e09-9b7d-7258b738e3e0" class="">
+</p><div id="4d8baf17-0d58-49c3-8511-29342aa18c0b" class="column-list"><div id="9dfa95b7-3d34-4229-a603-a23e9a120816" style="width:43.75%" class="column"><p id="db5c9f6c-7d42-423d-92dd-e049086d2eee" class="">
+</p><figure id="b1656d91-0e64-4b31-8ab3-7fade0d0a551" class="link-to-page"><a href="Personal%20Website%2053d6cb7bbe5f405488bc737e2af37035/Project%20#3%20b1656d910e644b318ab37fade0d0a551.html"><span class="icon">🌸</span>Project #3</a></figure><p id="ba01e38e-4ede-4bb3-a240-05dc2849bc25" class=""><mark class="highlight-gray">Share a few lines to give people an idea of what to expect. What was the project? What were the deliverables?</mark></p></div><div id="7a35a4c1-cb76-494e-a6ee-aac107277bf5" style="width:56.25%" class="column"><figure id="1b082a86-c4d0-4214-bb99-caf1a8fdfde3" class="image"><a href="Personal%20Website%2053d6cb7bbe5f405488bc737e2af37035/Screenshot_2020-10-07_at_20.34.39.png"><img style="width:2590px" src="Personal%20Website%2053d6cb7bbe5f405488bc737e2af37035/Screenshot_2020-10-07_at_20.34.39.png"/></a></figure></div></div><p id="aa1679bf-ff26-47a8-837e-446096ab4c43" class="">
+</p><p id="e21165c9-2fde-445d-ae66-deac58ae5295" class="">
+</p><p id="43fff304-8c3d-42dc-8ae6-c6e76f06e285" class="">
+</p><p id="4fdea701-925d-4368-9e34-6a48da974c44" class="">
+</p><h2 id="a00e77c1-0490-4468-8268-eac2570d1998" class="block-color-gray">About me </h2><hr id="66e72c38-e4d4-4eaf-8330-eb48f53f64ad"/><div id="ba7d7201-9d5a-487e-ab49-5966d8e7b108" class="column-list"><div id="8b011f0c-fb34-40c1-8903-1861f6c2ba8b" style="width:50%" class="column"><p id="3c0439b8-7292-4e89-b88e-31a0152026b8" class="block-color-gray">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ac ipsum enim. Etiam ultricies augue iaculis, elementum risus non, blandit tortor. Lis facilisis sapien, in vestibulum sem dignissim ut:</p><ul id="9db80f2d-fd04-4e69-9900-2d8c2521c36e" class="block-color-gray bulleted-list"><li style="list-style-type:disc">Graphic Design</li></ul><ul id="6875a229-7860-49bf-b7be-acc34fffb84c" class="block-color-gray bulleted-list"><li style="list-style-type:disc">Branding</li></ul><ul id="93a34c8a-3c3f-4d9a-b85b-ced0b624d9f9" class="block-color-gray bulleted-list"><li style="list-style-type:disc">Frontend Development</li></ul><ul id="77f881ff-6f07-435a-a8a3-3ca58f6ae820" class="block-color-gray bulleted-list"><li style="list-style-type:disc">Photography</li></ul></div><div id="748b2830-abb6-45c2-9db5-845ccb02d01c" style="width:50%" class="column"><figure id="a484c77a-e6af-4a7f-8388-f9f72e54a9ec" class="image"><a href="https://images.unsplash.com/photo-1492681290082-e932832941e6?ixlib=rb-1.2.1&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb&amp;ixid=eyJhcHBfaWQiOjYzOTIxfQ"><img src="https://images.unsplash.com/photo-1492681290082-e932832941e6?ixlib=rb-1.2.1&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb&amp;ixid=eyJhcHBfaWQiOjYzOTIxfQ"/></a><figcaption>You stood on a mountain!</figcaption></figure></div></div><p id="b5904380-2760-4dc7-aef5-ae61e758f51e" class="block-color-gray">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ac ipsum enim. Etiam ultricies augue iaculis, elementum risus non, blandit tortor. Suspendisse lobortis facilisis sapien, in vestibulum sem dignissim ut. </p><p id="33c20a30-f014-4f9b-a5e6-91066aa2e177" class="">
+</p><p id="ce5d280b-49ac-4024-8fb9-3ea0492d061e" class="">
+</p><h2 id="bbb6b273-1766-497d-91b9-104ba05f515f" class="block-color-gray">Blog </h2><hr id="155c1a76-038c-41d5-9398-973876cdffd7"/><p id="693dedb8-324d-4145-a742-286e28179c15" class="">
+</p><figure id="6023660c-37ea-45e2-a419-1f57384a62ea" class="link-to-page"><a href="Personal%20Website%2053d6cb7bbe5f405488bc737e2af37035/Blog%20post%20#1%20%E2%80%93%2027th%20March%202020%206023660c37ea45e2a4191f57384a62ea.html"><span class="icon">🍪</span>Blog post #1 – 27th March 2020</a></figure><figure id="281238a4-6c2b-430b-b50c-c5727b532e18" class="link-to-page"><a href="Personal%20Website%2053d6cb7bbe5f405488bc737e2af37035/Blog%20post%20#2%20%E2%80%93%2017th%20April%202020%20281238a46c2b430bb50cc5727b532e18.html"><span class="icon">🧘🏻‍♂️</span>Blog post #2 – 17th April 2020</a></figure><p id="e74c2c17-f994-43b9-8b1a-fb3f21492314" class="">
+</p><p id="ae0f6b94-2dfe-4e87-96a0-9529947394fc" class="">
+</p><p id="ed214dea-2b29-44d7-9d0c-33643d913aa9" class="">
+</p><p id="7ff0bace-3c5f-4e23-be02-6a8b23d1be8a" class="">
+</p><p id="d1a41454-3d4a-4dea-a26d-18cbccc738c8" class="">
+</p><h2 id="3b128a6f-85b8-4b41-b7ce-d2a332360683" class="block-color-gray">Testimonials </h2><hr id="d3a16c20-1b9d-4c58-add9-0f6787d929ad"/><p id="b9982ed0-e833-4ca6-b870-5288761ef41d" class="">
+</p><div id="26269ffe-37ca-4694-905a-03e09a83eb7b" class="column-list"><div id="88e1488c-7ec2-46f8-96aa-98633441323f" style="width:50%" class="column"><blockquote id="47f4f9eb-5342-4d68-8109-0995db961a8d" class="block-color-gray">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ac ipsum enim. Etiam ultricies augue iaculis, elementum risus non, blandit tortor. </blockquote><p id="281291c5-3324-49dd-aa81-e616946a0303" class="block-color-gray"><em>– Client Name</em></p></div><div id="742df10a-b287-4aaf-9efa-1102dfd1313f" style="width:50%" class="column"><blockquote id="917a52a9-4640-4858-8d48-cc1414509a4e" class="block-color-gray">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ac ipsum enim. Etiam ultricies augue iaculis, elementum risus non, blandit tortor.</blockquote><p id="818a652d-f4b0-4212-82d9-c1ad7c819964" class="block-color-gray"><em>– Client Name</em></p></div></div><p id="309d9706-dff3-4a8c-b00a-157a5b1afe8b" class="">
+</p><blockquote id="2400dc5d-bfb6-4fe9-a63f-1abac580eac0" class="block-color-gray">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ac ipsum enim. Etiam ultricies augue iaculis, elementum risus non, blandit tortor. Suspendisse lobortis facilisis sapien, in vestibulum sem dignissim ut blandit tortor. Suspendisse lobortis facilisis sapien.</blockquote><p id="70560351-2135-474c-8b59-2d11f7f2d302" class="block-color-gray"><em>– Client Name</em></p><p id="a91c54b7-8ed8-4a7a-a3b9-3207ce62ac52" class="block-color-gray">
+</p><p id="18ade588-e4b5-4d66-a9ba-c37fb29f9b0e" class="">
+</p><hr id="8b7f0771-9277-46ad-9ad3-d8c70a2b280e"/><p id="c7524130-5fb1-4f75-8c9c-5c26892fc4e4" class="">
+</p><div id="c3309770-5d8a-4d49-9ce7-bc9a2f98f78c" class="column-list"><div id="4374b314-9540-4d2d-974e-6646f38393c3" style="width:43.75%" class="column"><h2 id="a277fc71-b652-43ca-b399-ed525a310bb2" class="block-color-gray">If you&#x27;d like to start a project get in touch →</h2><p id="603a1744-fac0-4b30-84bd-f6da566175df" class="">
+</p></div><div id="34f23ce1-4990-4683-9243-253a91d944fa" style="width:56.25%" class="column"><figure class="block-color-teal callout" style="white-space:pre-wrap;display:flex" id="f473694d-8c96-4466-9bfa-d7ace2d58dd5"><div style="font-size:1.5em"><span class="icon">✉️</span></div><div style="width:100%"><a href="mailto:hello@joshmillgate.co.uk">youremail@address.com</a></div></figure><p id="1828886e-1168-44b6-a361-141e4fc28cdf" class="">
+</p></div></div><hr id="994523f3-f04d-49fe-98a3-4a0619bdcf0b"/><div id="c2f39c4d-6fbe-4492-9571-b99bb6111370" class="column-list"><div id="dec2bad5-2833-41a6-ac8d-bcc3f5c429c1" style="width:68.75%" class="column"><p id="259f3ec4-0c0b-412e-aace-bdd521762668" class="block-color-gray">Created by<mark class="highlight-gray"> </mark><a href="https://twitter.com/joshmillgate">@joshmillgate</a></p><p id="d0340e24-bff3-4a36-9507-2d5165e8fe70" class="">
+</p></div><div id="d9f77b79-7412-4ef8-b856-babb41ec4c41" style="width:31.250000000000007%" class="column"><p id="53f2a105-e156-4f2f-8e26-9ad4c3f34334" class=""><mark class="highlight-gray"><code>©2024 Your Name</code></mark></p><p id="ee44a8af-55d4-4c5b-a8d2-373264e0429b" class="">
+</p></div></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
